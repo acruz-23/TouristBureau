@@ -43,9 +43,6 @@
               <li class="nav-item">
                 <a class="nav-link" href="./hike.html">Hiking</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./video.html">Video</a>
-              </li>
             </ul>
           </div>
         </div>
@@ -62,7 +59,7 @@
                   <div class="form-group">
                     <label for="activityCategory">Activity Category:</label>
                     <select class="form-select" id="activityCategory">
-                      <option selected>Select One</option>
+                      <option value="Welcome" selected>Select One</option>
                     </select>
                   </div>
                 </div>
@@ -72,7 +69,7 @@
                   <div class="form-group">
                     <label for="activitiesList">Activity list:</label>
                     <select class="form-select" id="activitiesList" size="1">
-                      <option selected disabled>
+                      <option value="select" selected disabled>
                         Please Choose a Category
                       </option>
                     </select>
@@ -82,7 +79,12 @@
             </form>
           </div>
           <div class="col-md-6 offset-lg-1">
-            <h2 id="category"></h2>
+            <h2 id="category">Welcome</h2>
+            <img
+              src="./images/VisitorsBureauSmall.webp "
+              alt="Visitors Bureau logo"
+              id="logoImage"
+            />
             <p id="id"></p>
             <p id="name"></p>
             <p id="description"></p>

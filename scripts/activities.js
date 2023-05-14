@@ -143,12 +143,10 @@ function generateActivityCategory(array) {
 function generateActivitiesList() {
   console.log("generateActivitiesList start");
   const selectedCategory = activityCategoryEl.value;
-
+  onCategoryChangePageReset(selectedCategory);
   console.log(selectedCategory);
   // let sizeCounter = 0;
-  activitiesListEl.options.length = 0;
-  const defaultActivity = new Option("Choose One", "select");
-  activitiesListEl.appendChild(defaultActivity);
+
   for (let object of activities) {
     if (selectedCategory == object.category) {
       const activityOptions = new Option(object.name, object.id);
@@ -164,7 +162,7 @@ function generateActivitiesList() {
 function generateActivityInfo() {
   console.log("generateActivityInfo start");
   const selectedActivity = activitiesListEl.value;
-
+  resetPurchaseForm();
   for (let object of activities) {
     if (selectedActivity == object.id) {
       chosenActivity = object;
@@ -180,6 +178,8 @@ function generateActivityInfo() {
       if (object.price > 0.0) {
         console.log;
         displayform();
+      } else {
+        ticketFormEl.style.display = "none";
       }
     }
   }
@@ -208,7 +208,32 @@ function resetPurchaseForm() {
   const numberOfTicketsEL = document.getElementById("numOfTickets");
   const cardNumberEl = document.getElementById("cardNumber");
   const userEmailEl = document.getElementById("userEmail");
+  const purchaseMessageEl = document.getElementById("purchaseMessage");
+  purchaseMessageEl.innerHTML = "";
   numberOfTicketsEL.value = null;
   cardNumberEl.value = null;
   userEmailEl.value = null;
+}
+function onCategoryChangePageReset(category) {
+  document.getElementById("category").innerHTML = category;
+  activitiesListEl.options.length = 0;
+  if (category === "Welcome") {
+    document.getElementById("logoImage").src =
+      "./images/VisitorsBureauSmall.webp";
+    document.getElementById("logoImage").alt = "Visitors Bureau logo";
+
+    const defaultActivity = new Option("Please Choose a Category", "select");
+    activitiesListEl.appendChild(defaultActivity);
+  } else {
+    document.getElementById("logoImage").src = "";
+    document.getElementById("logoImage").alt = "";
+    const defaultActivity = new Option("Choose One", "select");
+    activitiesListEl.appendChild(defaultActivity);
+  }
+  document.getElementById("id").innerHTML = "";
+  document.getElementById("name").innerHTML = "";
+  document.getElementById("description").innerHTML = "";
+  document.getElementById("location").innerHTML = "";
+  document.getElementById("price").innerHTML = "";
+  ticketFormEl.style.display = "none";
 }
