@@ -19,7 +19,7 @@ let hikes = [
     scenicImage: "deep_blue_1.png",
     trailMapImage: "deep_blue_2.png",
     length: "2 miles",
-    difficulty: 2,
+    difficulty: 5,
   },
   {
     id: "H103",
@@ -29,7 +29,7 @@ let hikes = [
     scenicImage: "overlook_trail_1.png",
     trailMapImage: "overlook_trail_2.png",
     length: ".7 miles",
-    difficulty: 2,
+    difficulty: 4,
   },
 ];
 
