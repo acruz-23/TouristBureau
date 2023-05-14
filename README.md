@@ -5,7 +5,7 @@ Website for a fictional Tourist Bureau.
 # Page Images
 
 ![Home](./images/HomeScreenshot.png "Home page")
-![Activities](./images/images/activitiesScreenshot.png "Activities page")
+![Activities](./images/activitiesScreenshot.png "Activities page")
 ![Hiking](./images/HikingScreenshot.png "Hiking page")
 
 ## Activities Form
